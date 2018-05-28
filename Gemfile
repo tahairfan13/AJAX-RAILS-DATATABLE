@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'jquery-datatables'
 gem 'ajax-datatables-rails'
  gem 'jquery-rails'
+gem 'ransack'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

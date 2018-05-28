@@ -1,5 +1,25 @@
+<%= search_form_for @q, url: admin_report_path ,  method: :get  do |f| %>
+  <br>
+  <b>From</b>
+  <%= f.search_field :created_at_gteq%>
+  <b>To</b>
+  <%= f.search_field :created_at_lteq%>
+  <%= f.submit %>
+<% end %>
 
-<table id="users-datatable" data-source="<%=  admin_report_path(format: :json)   %>">
+ <!-- <table>  -->
+<!--    <tr>
+     <th> abc</th>
+   </tr>
+   <% @products.each do |product| %>
+   <tr>
+    <td><%= product.created_at %></td>
+    <td><%= product.name%></td>
+ </tr>
+   <% end %>
+</table> -->
+ <!--  -->
+<table id="users-datatable" data-source="<%=  admin_report_path(format: :json) + "?" + request.query_string   %>">
   <thead>
     <tr>
       <th>IDD</th>
@@ -9,18 +29,3 @@
   <tbody>
   </tbody>
 </table>
-<!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script> -->
-
-<script>
-  // $('#users-datatable').dataTable
-  //   "processing": true
-  //   "serverSide": true
-  //   "ajax": $('#users-datatable').data('source')
-  //   "pagingType": 'full_numbers'
-  //   "columns": [
-  //     {"data": "id"}
-  //     {"data": "name"}
-  //   ]
-</script>

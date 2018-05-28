@@ -1,5 +1,10 @@
 class UserDatatable < AjaxDatatablesRails::Base
 
+  def user
+    @user ||= options[:user]
+  end
+
+
   def view_columns
     # Declare strings in this format: ModelName.column_name
     # or in aliased_join_table.column_name format
@@ -21,7 +26,7 @@ class UserDatatable < AjaxDatatablesRails::Base
 
   def get_raw_records
     # insert query here
-     User.all
-  end
-
+    user
+    # User.where(name: user.name)
+  end   
 end
